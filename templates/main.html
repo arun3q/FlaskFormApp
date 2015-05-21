@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+			<!-- multistep form -->
+		<form id="msform">
+		  <!-- progressbar -->
+		  <ul id="progressbar">
+			<li class="active">Contact Details</li>
+			<li>Partnership Setup</li>
+			<li>Payment Information</li>
+		  </ul>
+		  <!-- fieldsets -->
+		  <fieldset>
+			<h2 class="fs-title">Create your account</h2>
+			<h3 class="fs-subtitle">Company contact details</h3>
+			<input type="text" name="name" placeholder="Name" />
+			<input type="text" name="email" placeholder="Email" />
+			<input type="password" name="pass" placeholder="Password" />
+			<input type="password" name="cpass" placeholder="Confirm Password" />
+			<input type="button" name="next" class="next action-button" value="Next" />
+		  </fieldset>
+		  <fieldset>
+			<h2 class="fs-title">Setup Partnership</h2>
+			<h3 class="fs-subtitle">Plant a tree for as little as 50cents</h3>
+			<input type="text" name="businessname" placeholder="Business name" />
+			<input type="text" name="website" placeholder="Website URL" />
+			<input type="text" name="shoppingcart" placeholder="Shopping cart: Shopify" disabled/>
+
+			<select name="vendor_modelVolume" class="select-box" required="">
+			  <option>Plant 1 Tree per order</option>
+			  <option selected="selected">Plant 5 Trees per order</option>
+			  <option>Plant 10 Trees per order</option>
+			  <option>Plant 20 Trees per order</option>
+			  <option>Plant 30 Trees per order</option>
+			  <option>Plant 40 Trees per order</option>
+			  <option>Plant 50 Trees per order</option>
+			</select>
+			<div style="clear:both"></div>
+			<input type="button" name="previous" class="previous action-button" value="Previous" />
+			<input type="button" name="next" class="next action-button" value="Next" />
+		  </fieldset>
+		  <fieldset>
+			<h2 class="fs-title">Payment Information</h2>
+			<h3 class="fs-subtitle">Your card will be charged monthly</h3>
+
+
+			<input type="text" name="lname" placeholder="Card number" />
+			<input type="text" name="phone" placeholder="Expiration" />
+			<input type="text" name="phone" placeholder="CCV" />
+
+			<input type="button" name="previous" class="previous action-button" value="Previous" />
+			<input type="submit" name="submit" class="submit action-button" value="Submit" />
+		  </fieldset>
+		</form>
+
+		<!-- jQuery -->
+		<script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<!-- jQuery easing plugin -->
+		<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+{% endblock %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
